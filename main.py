@@ -10,7 +10,7 @@ def dd_robot(msg):
     msg += "\n当前时间为：" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(msg)
     HEADERS = {"Content-Type": "application/json;charset=utf-8"}
-    url = "https://oapi.dingtalk.com/robot/send?access_token=99d27d8c6f910fc4db2b1b0eb7583d5d8d1f4ee9599c630b3af7a29b95c9be97"
+    url = 换成自己的钉钉bot的url
     data_info = {
         "msgtype": "text",
         "text": {
@@ -23,7 +23,7 @@ def dd_robot(msg):
     requests.post(url,data=value,headers=HEADERS)
 
 def read_json():
-    f_dir = r"C:\Users\Administrator\AppData\Roaming\Battle.net\Battle.net.config"
+    f_dir = 自己的Battle.net.config路径
     contents = Path(f_dir).read_text()
     data = json.loads(contents)
     return data
